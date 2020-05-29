@@ -10,11 +10,8 @@ class Manufacturer extends Model
      * @var string
      */
     protected $table = 'manufacturers';
-
-    /**
-     * @var array
-     */
-    protected $fillable = [
-        'manufacturer', 
-    ];
+    
+    public function trucks(){
+        return $this->hasMany(Truck::class, 'make_id');
+    }
 }

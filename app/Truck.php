@@ -17,4 +17,8 @@ class Truck extends Model
     protected $fillable = [
         'make_id', 'year', 'owner', 'owner_number', 'comments',
     ];
+
+    public function manufacturer(){
+        return $this->belongsTo(Manufacturer::class, 'make_id');
+    }
 }

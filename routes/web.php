@@ -12,5 +12,18 @@
 */
 
 Route::get('/', function () {
-    return view('trucks.index');
+    return view('app');
 });
+
+Route::resource('trucks', 'TrucksController');
+
+// app/Http/routes.php
+Route::get('trucks/create', [
+    'uses' => 'TrucksController@create',
+    'as' => 'trucks.create'
+]);
+
+Route::post('trucks', [
+    'uses' => 'TrucksController@store',
+    'as' => 'trucks.store'
+]);

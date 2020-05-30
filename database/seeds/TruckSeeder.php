@@ -16,7 +16,7 @@ class TruckSeeder extends Seeder
         $faker = Faker::create();
 
         Truck::create([
-            'make_id'     =>  '1',
+            'make_id'     =>  $faker->numberBetween($min = 1, $max = 4),
             'year'        =>  $faker->numberBetween($min = 1900, $max = 2020),
             'owner'       =>  $faker->name,
             'owner_number'=>  $faker->randomDigit,

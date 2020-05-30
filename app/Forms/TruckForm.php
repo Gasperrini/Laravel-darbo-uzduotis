@@ -23,7 +23,8 @@ class TruckForm extends Form
         ]);
         $this->add('owner_number', 'number', [
             'label' => 'Savininkų skaičius',
-            'value' => ''
+            'value' => '',
+            'rules' => 'min:1',
         ]);
         $this->add('comments', 'textarea', [
             'label' => 'Komentarai',

@@ -25,7 +25,7 @@ class TrucksController extends Controller
 
         foreach($columns as $column){
             if(request()->filled($column)){
-                $trucks = $trucks->where($column, request($column));
+                $trucks = $trucks->where($column, 'like', '%' . request($column) . '%');
                 $queries[$column] = request($column);
             } 
         }

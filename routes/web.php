@@ -17,7 +17,6 @@ Route::get('/', function () {
 
 Route::resource('trucks', 'TrucksController');
 
-// app/Http/routes.php
 Route::get('trucks/create', [
     'uses' => 'TrucksController@create',
     'as' => 'trucks.create'

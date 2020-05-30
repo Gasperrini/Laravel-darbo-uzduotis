@@ -16,7 +16,22 @@ class TrucksController extends Controller
      */
     public function index()
     {
-        $trucks = Truck::with('manufacturer')->sortable()->paginate(8);
+        $trucks = new Truck;
+        $queries = [];
+
+        $columns = [
+            'make_id', 'year', 'owner', 'owner_number'
+        ];
+
+        foreach($columns as $column){
+            if(request()->filled($column)){
+                $trucks = $trucks->where($column, request($column));
+                $queries[$column] = request($column);
+            } 
+        }
+
+        $trucks = $trucks->with('manufacturer')->sortable()->paginate(5)->appends($queries);
+
         return view('trucks.index')->with('trucks', $trucks);
     }
 
@@ -53,8 +68,8 @@ class TrucksController extends Controller
             'make_id' => 'required',
             'year'    => 'required|integer|min:1900|max:'.date('Y'),
             'owner'   =>  new OwnerName,
-            'owner_number' => 'integer|min:0|max:99',
-            'comments'=> 'min:3|max:1000'
+            'owner_number' => 'min:0|max:99',
+            'comments'=> 'max:1000'
         ]);
 
         $form = new Truck;
@@ -64,7 +79,6 @@ class TrucksController extends Controller
         $form->owner_number = $request->input('owner_number');
         $form->comments = $request->input('comments');
         $form->save();
-        // Do saving and other things...
 
         return redirect()->route('trucks.index');
     }

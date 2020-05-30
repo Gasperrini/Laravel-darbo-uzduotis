@@ -26,4 +26,5 @@ class Truck extends Model
     }
 
     public $sortable = ['make_id', 'year', 'owner', 'owner_number'];
+
 }

@@ -19,8 +19,7 @@ class TruckForm extends Form
             'value' => '1900'
         ]);
         $this->add('owner', 'text', [
-            'label' => 'Savininkas',
-            'rules' => 'required'
+            'label' => 'Savininkas'
         ]);
         $this->add('owner_number', 'number', [
             'label' => 'Savininkų skaičius',

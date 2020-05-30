@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3a26a6f3ef445369aedf31c01c2fbf39",
+    "content-hash": "8f1d75dfcf1cd5e785d5375f843238ef",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -41,16 +41,16 @@
         },
         {
             "name": "doctrine/inflector",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/inflector.git",
-                "reference": "3fc171224a316569faad2df6b18a1fd8cce5a56d"
+                "reference": "9cf661f4eb38f7c881cac67c75ea9b00bf97b210"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/3fc171224a316569faad2df6b18a1fd8cce5a56d",
-                "reference": "3fc171224a316569faad2df6b18a1fd8cce5a56d",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/9cf661f4eb38f7c881cac67c75ea9b00bf97b210",
+                "reference": "9cf661f4eb38f7c881cac67c75ea9b00bf97b210",
                 "shasum": ""
             },
             "require": {
@@ -114,7 +114,7 @@
                 "uppercase",
                 "words"
             ],
-            "time": "2020-05-25T20:08:47+00:00"
+            "time": "2020-05-29T15:13:26+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -508,6 +508,63 @@
                 "symfony"
             ],
             "time": "2020-03-06T20:04:53+00:00"
+        },
+        {
+            "name": "kyslik/column-sortable",
+            "version": "6.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Kyslik/column-sortable.git",
+                "reference": "9f2ddfabe5cfd9cfd67b15805e2d0de48429c995"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Kyslik/column-sortable/zipball/9f2ddfabe5cfd9cfd67b15805e2d0de48429c995",
+                "reference": "9f2ddfabe5cfd9cfd67b15805e2d0de48429c995",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "5.8.*|^6.0|^7.0",
+                "illuminate/support": "5.8.*|^6.0|^7.0",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^5.0",
+                "phpunit/phpunit": "^8.5"
+            },
+            "type": "package",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Kyslik\\ColumnSortable\\ColumnSortableServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Kyslik\\ColumnSortable\\": "src/ColumnSortable/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Martin Kiesel",
+                    "email": "martin.kiesel@gmail.com",
+                    "role": "Developer and maintainer"
+                }
+            ],
+            "description": "Package for handling column sorting in Laravel 6.x",
+            "keywords": [
+                "column",
+                "laravel",
+                "sort",
+                "sortable",
+                "sorting"
+            ],
+            "time": "2020-03-08T12:26:23+00:00"
         },
         {
             "name": "laravel/framework",

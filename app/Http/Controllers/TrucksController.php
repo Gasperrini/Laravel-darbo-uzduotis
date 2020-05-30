@@ -16,7 +16,7 @@ class TrucksController extends Controller
      */
     public function index()
     {
-        $trucks = Truck::with('manufacturer')->paginate(8);
+        $trucks = Truck::with('manufacturer')->sortable()->paginate(8);
         return view('trucks.index')->with('trucks', $trucks);
     }
 

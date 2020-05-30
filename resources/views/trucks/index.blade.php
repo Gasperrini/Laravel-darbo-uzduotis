@@ -8,10 +8,10 @@
             <table class="table table-bordered">
                 <thead>
                 <tr>
-                    <th scope="col">Markė</th>
-                    <th scope="col">Gamybos metai</th>
-                    <th scope="col">Savininkas</th>
-                    <th scope="col">Savininkų skaičius</th>
+                    <th scope="col"> @sortablelink('manufacturer.manufacturer','Markė')</th>
+                    <th scope="col"> @sortablelink('year','Gamybos metai')</th>
+                    <th scope="col"> @sortablelink('owner','Savininkas')</th>
+                    <th scope="col"> @sortablelink('owner_number','Savininkų skaičius')</th>
                     <th scope="col">Komentarai</th>
                 </tr>
                 </thead>
@@ -27,7 +27,7 @@
                 </tbody>
                 @endforeach
             </table>
-            {{ $trucks->links() }}
+            {!! $trucks->appends(\Request::except('page'))->render() !!}
     @else
         <p>Sistemoje sunkvežimių nerasta!<p>
     @endif

@@ -165,6 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
+        
 
         /*
          * Application Service Providers...
@@ -175,6 +176,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Kris\LaravelFormBuilder\FormBuilderServiceProvider::class,
+
+        /*
+        * Third Party Service Providers...
+        */
+        Kyslik\ColumnSortable\ColumnSortableServiceProvider::class,
 
     ],
 
